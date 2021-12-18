@@ -1,80 +1,183 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!DOCTYPE html>
+
+<html class="loading" lang="en" data-textdirection="ltr">
+
+  
+
+<!-- Mirrored from pixinvent.com/bootstrap-admin-template/robust/html/ltr/vertical-menu-template/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Aug 2021 07:49:02 GMT -->
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <meta name="description" content="Robust admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template.">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <meta name="keywords" content="admin template, robust admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+    <meta name="author" content="Redington">
 
-                    </ul>
+    <title>Omini Business - Admin Dashboard</title>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
+    {{-- <link rel="apple-touch-icon" href="{{asset('admin/app-assets/images/ico/apple-icon-120.png')}}"> --}}
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+    {{-- <link rel="shortcut icon" type="image/x-icon" href="https://pixinvent.com/bootstrap-admin-template/robust/app-assets/images/ico/favicon.ico"> --}}
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CMuli:300,400,500,700" rel="stylesheet">
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-</body>
+    <!-- BEGIN VENDOR CSS-->
+
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css/vendors.min.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/vendors/css/charts/jquery-jvectormap-2.0.3.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/vendors/css/charts/morris.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/vendors/css/extensions/unslider.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/vendors/css/weather-icons/climacons.min.css')}}">
+
+    <!-- END VENDOR CSS-->
+
+    <!-- BEGIN ROBUST CSS-->
+
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css/app.min.css')}}">
+
+    <!-- END ROBUST CSS-->
+
+    <!-- BEGIN Page Level CSS-->
+
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css/core/menu/menu-types/vertical-menu.min.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css/core/colors/palette-gradient.min.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css/plugins/calendars/clndr.min.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/fonts/meteocons/style.min.css')}}">
+
+    <!-- END Page Level CSS-->
+
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/vendors/css/tables/datatable/datatables.min.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/vendors/css/tables/extensions/responsive.dataTables.min.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/vendors/css/tables/extensions/colReorder.dataTables.min.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/vendors/css/tables/extensions/buttons.dataTables.min.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/vendors/css/tables/extensions/fixedHeader.dataTables.min.css')}}">
+
+    <!-- BEGIN Custom CSS-->
+
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/assets/css/style.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css/pages/chat-application.css')}}">
+
+    <!-- END Custom CSS-->
+
+    
+
+  </head>
+
+  <body class="vertical-layout vertical-menu 2-columns chat-application  menu-expanded fixed-navbar" data-open="click" data-menu="vertical-menu" data-col="2-columns">
+
+
+
+    @include('include/admin_header')
+
+    @yield('content')
+
+    @include('include/admin_footer')
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    {{-- <script src="{{asset('admin/app-assets/vendors/js/editors/ckeditor/ckeditor.js')}}"></script>
+
+    <script src="{{asset('admin/app-assets/js/scripts/editors/editor-ckeditor.min.js')}}"></script> --}}
+
+    <!-- BEGIN VENDOR JS-->
+
+    <script src="{{asset('admin/app-assets/vendors/js/vendors.min.js')}}"></script>
+
+    <!-- BEGIN VENDOR JS-->
+
+    <!-- BEGIN PAGE VENDOR JS-->
+
+    <script src="{{asset('admin/app-assets/vendors/js/charts/raphael-min.js')}}"></script>
+
+    <script src="{{asset('admin/app-assets/vendors/js/charts/morris.min.js')}}"></script>
+
+    <script src="{{asset('admin/app-assets/vendors/js/charts/chart.min.js')}}"></script>
+
+    <script src="{{asset('admin/app-assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js')}}"></script>
+
+    <script src="{{asset('admin/app-assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js')}}"></script>
+
+    <script src="{{asset('admin/app-assets/vendors/js/extensions/moment.min.js')}}"></script>
+
+    <script src="{{asset('admin/app-assets/vendors/js/extensions/underscore-min.js')}}"></script>
+
+    <script src="{{asset('admin/app-assets/vendors/js/extensions/clndr.min.js')}}"></script>
+
+    <script src="{{asset('admin/app-assets/vendors/js/charts/echarts/echarts.js')}}"></script>
+
+    <script src="{{asset('admin/app-assets/vendors/js/extensions/unslider-min.js')}}"></script>
+
+    <!-- END PAGE VENDOR JS-->
+
+    <!-- BEGIN ROBUST JS-->
+
+    <script src="{{asset('admin/app-assets/js/core/app-menu.min.js')}}"></script>
+
+    <script src="{{asset('admin/app-assets/js/core/app.min.js')}}"></script>
+
+    <script src="{{asset('admin/app-assets/js/scripts/customizer.min.js')}}"></script>
+
+    <!-- END ROBUST JS-->
+
+    <!-- BEGIN PAGE LEVEL JS-->
+
+    <script src="{{asset('admin/app-assets/js/scripts/pages/dashboard-ecommerce.min.js')}}"></script>
+
+    <!-- END PAGE LEVEL JS-->
+
+    <script src="{{asset('admin/app-assets/js/scripts/modal/components-modal.min.js')}}"></script>
+
+
+
+    <script src="{{asset('admin/app-assets/vendors/js/tables/datatable/datatables.min.js')}}"></script>
+
+    <script src="{{asset('admin/app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js')}}"></script>
+
+    <script src="{{asset('admin/app-assets/vendors/js/tables/buttons.colVis.min.js')}}"></script>
+
+    <script src="{{asset('admin/app-assets/vendors/js/tables/datatable/dataTables.colReorder.min.js')}}"></script>
+
+    <script src="{{asset('admin/app-assets/vendors/js/tables/datatable/dataTables.buttons.min.js')}}"></script>
+
+    <script src="{{asset('admin/app-assets/vendors/js/tables/datatable/buttons.bootstrap4.min.js')}}"></script>
+
+    <script src="{{asset('admin/app-assets/vendors/js/tables/datatable/dataTables.fixedHeader.min.js')}}"></script>
+
+    <script src="{{asset('admin/app-assets/js/scripts/tables/datatables-extensions/datatable-responsive.min.js')}}"></script>
+
+    <script src="{{asset('admin/app-assets/js/scripts/pages/chat-application.js')}}"></script>
+
+  </body>
+
+  <!-- END: Body-->
+
+
+
+<!-- Mirrored from www.pixinvent.com/demo/frest-clean-bootstrap-admin-dashboard-template/html/ltr/vertical-menu-template/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Apr 2020 12:48:45 GMT -->
+
 </html>
