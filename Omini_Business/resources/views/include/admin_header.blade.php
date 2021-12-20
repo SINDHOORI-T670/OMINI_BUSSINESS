@@ -5,8 +5,8 @@
         <ul class="nav navbar-nav flex-row">
           <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
           <li class="nav-item"><a class="navbar-brand" href="{{route('Admin_Dashboard')}}">
-            <img class="brand-logo" alt="redington admin logo" src="{{asset('admin/app-assets/images/logo/logo-dark.png')}}">
-            {{-- <h3 class="brand-text">OMINI BUSINESS</h3> --}}
+            {{-- <img class="brand-logo" alt="OminiBusinessSolution admin logo" src="{{asset('admin/app-assets/images/logo/logo-dark.png')}}"> --}}
+            <h3 class="brand-text">OMINI BUSINESS <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SOLUTION</h3>
           </a></li>
           <li class="nav-item d-md-none"><a class="nav-link open-navbar-container" data-toggle="collapse" data-target="#navbar-mobile"><i class="fa fa-ellipsis-v"></i></a></li>
         </ul>
@@ -173,7 +173,7 @@
               </ul>
             </li> --}}
             <li class="dropdown dropdown-user nav-item">
-                <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown"><span class="avatar avatar-online"><img src="@if(Auth::User()->image){{Auth::User()->image}} @else {{asset('admin/app-assets/images/portrait/small/avatar-s-1.png')}} @endif" alt="avatar"><i></i></span><span class="user-name">{{Auth::User()->name}}</span></a>
+                <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown"><span class="avatar avatar-online"><img src="@if(Auth::User()->image){{Auth::User()->image}} @else {{asset('admin/app-assets/images/gallery/noimage.jpg')}} @endif" alt="avatar"><i></i></span><span class="user-name">{{Auth::User()->name}}</span></a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="{{url('admin/edit/profile')}}"><i class="ft-user"></i> Edit Profile</a>
                     <div class="dropdown-divider"></div>
@@ -311,8 +311,12 @@
         {{-- <li class=" nav-item"><a href="{{url('admin/list/rewards')}}"><i class="icon-trophy"></i><span class="menu-title" data-i18n="nav.chat-application.main">Rewards</span></a>
         </li> --}}
 
-        {{-- Resources --}}
-        <li class=" nav-item"><a href="#"><i class="fa fa-tasks"></i><span class="menu-title" data-i18n="nav.chat-application.main">Resources</span></a>
+        {{-- News --}}
+        <li class=" nav-item"><a href="{{url('admin/news')}}"><i class="fa fa-tasks"></i><span class="menu-title" data-i18n="nav.chat-application.main">News</span></a>
+        </li>
+
+        {{-- Career --}}
+        <li class=" nav-item"><a href="{{url('admin/career')}}"><i class="icon-grid"></i><span class="menu-title" data-i18n="nav.chat-application.main">Career</span></a>
         </li>
 
         {{-- Value Journals --}}
